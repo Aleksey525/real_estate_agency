@@ -61,6 +61,10 @@ class Complaint(models.Model):
     text = models.TextField('Текст жалобы')
 
 
+    def __str__(self):
+        return self.flat
+
+
 class Owner(models.Model):
     name = models.CharField('ФИО владельца:', max_length=200, db_index=True)
     owners_phonenumber = models.CharField('Номер владельца', max_length=20, db_index=True)
